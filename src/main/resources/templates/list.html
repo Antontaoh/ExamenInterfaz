@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lista de Ítems</title>
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+<body>
+<div class="container">
+    <h1>Lista de Ítems</h1>
+    <table>
+        <tr>
+            <th>Título</th>
+            <th>Precio</th>
+            <th>Categoría</th>
+            <th>Acciones</th>
+        </tr>
+        <tr th:each="item : ${items}">
+            <td th:text="${item.title}"></td>
+            <td th:text="${item.price}"></td>
+            <td th:text="${item.category}"></td>
+            <td>
+                <a th:href="@{/items/{id}(id=${item._id})}">Ver</a>
+                <a th:href="@{/items/delete/{id}(id=${item._id})}" class="delete-btn" onclick="return confirm('¿Seguro que quieres eliminar este ítem?')">Eliminar</a>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <form action="/items/add" method="post">
+        <input type="text" name="title" placeholder="Título" required>
+        <input type="number" name="price" placeholder="Precio" required>
+        <input type="text" name="category" placeholder="Categoría" required>
+        <input type="text" name="description" placeholder="Descripción">
+        <button type="submit">Añadir Ítem</button>
+    </form>
+</div>
+</body>
+</html>
+
