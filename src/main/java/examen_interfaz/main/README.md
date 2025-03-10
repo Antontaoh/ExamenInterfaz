@@ -3,7 +3,7 @@
 ## 🔧 Tecnologías Utilizadas
 - **Backend:** Spring Boot 3.4.3
 - **Base de Datos:** MongoDB
-- **Frontend:** Thymeleaf + HTML + CSS (con Bootstrap/Tailwind)
+- **Frontend:** Thymeleaf + HTML + CSS
 - **API REST:** Spring Web
 - **Generación de Reportes:** JasperReports
 - **Documentación:** JavaDoc
